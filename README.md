@@ -117,14 +117,16 @@ in de boot() methode: Schema::defaultStringLength(191);
         return view('admin.dashboard', compact('users', 'userCount'));
     }
 40: open: web.php
-41: voeg: use App\Http\Controllers\Admin\DashboardController;
-    Route::middleware(['auth', 'role:admin'])
-        ->prefix('admin')
-        ->name('admin.')
-        ->group(function () {
-            Route::get('/dashboard', [DashboardController::class, 'index'])
-                ->name('dashboard');
-        });
+41: voeg: 
+    use App\Http\Controllers\Admin\DashboardController;
+        Route::middleware(['auth', 'role:admin'])
+            ->prefix('admin')
+            ->name('admin.')
+            ->group(function () {
+                Route::get('/dashboard', [DashboardController::class, 'index'])
+                    ->name('dashboard');
+            });
 42: maak view aan resources/views/admin -> dashboard.blade.php
 43: maak view aan recources/views -> dashboard.blade.php
+44: Expand het project enjoy!
 ```
